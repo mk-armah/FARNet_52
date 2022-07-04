@@ -7,7 +7,7 @@ Loss function for the network is a custom loss named Exponential Weighted Center
 
 <img src = ".\architecture.PNG" alt = "Model Architecture">
 
-## Project Briefing
+## FARNet_52 Project Briefing
 
 Localization of anatomical landmarks is vital for clinical diagnosis, treatment planning, and research. In 
 this project I built on a recent novel deep convolutional neural network architecture, FARNET, which 
@@ -23,24 +23,24 @@ the dataloader class for your project as well.
 ## Directory Setup
 setup for the new data class should strictly follow the that of the CustomDataset folder provided
 
-.
-├── CustomDataSet
-├── └── imgs
-├──        └──cephalo (281).jpg    #sample image
-├──        └──cephalo (505).jpg    #second sample image
-├──    └── json 
-├──        └──data.json            #single json file to host info of all images
-├── image                          #
-├── architecture.PNG               #
-├── config.py                      # ToDo: Finish tests and logs
-├── data.py                        # ToDo: Provides project overview, and instructions to use the code
-├── main.py                        # Read this data
-├── model.py                       # Store EDA results 
-├── Readme.md
-├── requirements.txt
-├── train.py                       # training model pipeline
-├── train.py 
-├── utils.py
+
+├── CustomDataSet <br/>
+├── └── imgs <br/>
+├──        └──cephalo (281).jpg    #sample image <br/>
+├──        └──cephalo (505).jpg    #second sample image <br/>
+├──    └── json  <br/>
+├──        └──data.json            #single json file to host info of all images <br/>
+├── image                           
+├── architecture.PNG               
+├── config.py                      # ToDo: Config File - customized to suit your os set-up <br/>
+├── data.py                        # ToDo: Dataset Class <br/>
+├── main.py                        #main pipeline for training and testing <br/>
+├── model.py                       # Store EDA results  <br/>
+├── Readme.md <br/>
+├── requirements.txt <br/>
+├── test.py                        # model testing functions <br/>
+├── train.py                       # model training functions <br/>
+├── utils.py                       # helper functions <br/>
 
 
 ## USAGE 
@@ -50,3 +50,6 @@ You should set the image path in config by yourself
 
 ### Run main.py
 Run main.py to train the model and test its performance
+
+### Reference
+FARNet Repo - https://github.com/iskenderkahramanoglu/FARNet
