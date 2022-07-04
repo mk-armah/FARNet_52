@@ -1,38 +1,52 @@
-# Feature Aggregation and Refinement Network for 2D Anatomical Landmark Detection
+# Feature Aggregation and Refinement Network for 2D Anatomical Landmark Detection - FARNet
 
-## Overview
-Localization of anatomical landmarks is essential for clinical diagnosis, treatment planning, and research. In this paper, we propose a novel deep network, named feature aggregation and refinement network (FARNet), for the automatic detection of anatomical landmarks. To alleviate the problem of limited training data in the medical domain, our network adopts a CNN pre-trained on natural images as the backbone network and several popular networks have been compared. Our FARNet also includes a multi-scale feature aggregation module for multiscale feature fusion and a feature refinement module for high-resolution heatmap regression. Coarse-to-fine supervisions are applied to the two modules to facilitate the endto-end training. We further propose a novel loss function named Exponential Weighted Center loss for more accurate heatmap regression, which focuses on the losses from the pixels near landmarks and suppresses the ones from far away. Our network has been evaluated on three publicly available anatomical landmark detection datasets, including cephalometric radiographs, hand radiographs, and spine radiographs, and achieves state-of-art performances on all three datasets.
+## Overview from the Original FARNet Research
 
-![The architecture of the feature aggregation and refinement network (FARNet). FARNet includes a backbone network
-(in the pink dashed box), a multi-scale feature aggregation (MSFA) module (in the blue dashed box) and a feature refinement
-(FR) module (in the brown dashed box). We also give the feature level labels {L0, L1, L2, L3, L4, L5} at the left side of the
-figure, and all feature maps at the same horizontal level have the same spatial resolution.](https://github.com/JuvenileInWind/Farnet/tree/master/image/FARNet_bold.pdf)
+Feature Aggregation and Refinement Network (FARNet) is a deep neural network proposed by Yueyuan Ao and Hong Wu for automatic detection of anatomical landmarks. The backbone of the network is a CNN pre-trained on natural images, this helps in alleviating the issue of limited training data in the medical domain and also eliminate the need of learning features 100% from scratch. The Architecture also includes a multi-scale feature aggregation module for multiscale feature fusion and a feature refinement module for high resolution heatmap regression.
+Loss function for the network is a custom loss named Exponential Weighted Center loss which supresses landmark predictions far from the ground truth and focuses on losses from the pixels near landmarks.
 
-## Data
-In this paper, we evaluate our landmark detection network
-on three public benchmark data sets, a cephalometric X-rays
-dataset [1], a hand X-rays dataset [2] and a Spinal AnteriorPosterior (AP) X-rays dataset [3].
-## How to use
-### Dependencies
-This tutorial depends on the following libraries:
-* pytorch = 1.0.1
-* numpy = 1.18.5
-* python >= 3.6
-* xlwt
+<img src = ".\architecture.PNG" alt = "Model Architecture">
+
+## Project Briefing
+
+Localization of anatomical landmarks is vital for clinical diagnosis, treatment planning, and research. In 
+this project I built on a recent novel deep convolutional neural network architecture, FARNET, which 
+localizes 19 landmarks of anatomical images for medical diagnosis. This work seeks to extend the model's 
+architecture to localize 52 anatomical landmarks. Other modifications done include the construction of a new pytorch dataset class which takes in an Image directory and a json file Path containing the corresponding image details for training and testing the Network. All other configurations including backbone network,loss functions and optimizers remain unchanged as presented in the original paper.
+
+
+
+PS: This configuration was tailored to suit the specific setup of a Client on a freelancing platform. The complete dataset as well as the model's learned weights and biases after training is not open sourced or included in this repository. Few samples of the dataset have been provided to aid in setting up
+the dataloader class for your project as well.
+
+
+## Directory Setup
+setup for the new data class should strictly follow the that of the CustomDataset folder provided
+
+.
+├── CustomDataSet
+├── └── imgs
+├──        └──cephalo (281).jpg    #sample image
+├──        └──cephalo (505).jpg    #second sample image
+├──    └── json 
+├──        └──data.json            #single json file to host info of all images
+├── image                          #
+├── architecture.PNG               #
+├── config.py                      # ToDo: Finish tests and logs
+├── data.py                        # ToDo: Provides project overview, and instructions to use the code
+├── main.py                        # Read this data
+├── model.py                       # Store EDA results 
+├── Readme.md
+├── requirements.txt
+├── train.py                       # training model pipeline
+├── train.py 
+├── utils.py
+
+
+## USAGE 
 
 ### config.py
 You should set the image path in config by yourself
 
 ### Run main.py
 Run main.py to train the model and test its performance
-
-### Some results 
-![ Illustration of landmark detection results by our proposed method on three public datasets. The first row is the task
-of cephalometric landmark detetcion(19 landmarks), the second row is the task of hand radiographs landmark detection(37
-landmarks) and the last row is the task of spinal anterior-posterior x-ray landmark detection(68 landmarks). The red points
-denote our detected landmarks via our framework, while blue points represent the ground-truth landmarks.](https://github.com/JuvenileInWind/Farnet/tree/master/image/results.png)
-
-## Reference
-[1] C.-W. Wang, C.-T. Huang, J.-H. Lee, C.-H. Li, S.-W. Chang, M.-J.Siao, T.-M. Lai, B. Ibragimov, T. Vrtovec, O. Ronneberger, et al., “A benchmark for comparison of dental radiography analysis algorithms,” Medical image analysis, vol. 31, pp. 63–76, 2016.  
-[2] C. Payer, D. ˇStern, H. Bischof, and M. Urschler, “Integrating spatial configuration into heatmap regression based cnns for landmark localization,” Medical Image Analysis, vol. 54, pp. 207–219, 2019.  
-[3] H. Wu, C. Bailey, P. Rasoulinejad, and S. Li, “Automatic landmark estimation for adolescent idiopathic scoliosis assessment using boostnet,” in International Conference on Medical Image Computing and ComputerAssisted Intervention, 2017.  

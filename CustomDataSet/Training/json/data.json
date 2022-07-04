@@ -1,0 +1,638 @@
+[{
+    "imagePath": "cephalo (281).jpg",
+    "gender": "Male",
+    "age": 11,
+    "points": [
+        {
+            "pointName": "Ruler 1",
+            "pointAbbreviation": "R1",
+            "X": 925.2502857142858,
+            "Y": 348.40685714285723
+        },
+        {
+            "pointName": "Ruler 2",
+            "pointAbbreviation": "R2",
+            "X": 928.537142857143,
+            "Y": 397.70971428571437
+        },
+        {
+            "pointName": "Sella turcica",
+            "pointAbbreviation": "S",
+            "X": 486.45485714285724,
+            "Y": 700.1005714285716
+        },
+        {
+            "pointName": " Nasion",
+            "pointAbbreviation": "N",
+            "X": 806.9234285714286,
+            "Y": 626.1462857142858
+        },
+        {
+            "pointName": "Orbital",
+            "pointAbbreviation": "Or",
+            "X": 762.5508571428572,
+            "Y": 760.9074285714287
+        },
+        {
+            "pointName": " Porion",
+            "pointAbbreviation": "P",
+            "X": 379.63200000000006,
+            "Y": 782.2720000000002
+        },
+        {
+            "pointName": "Condylion",
+            "pointAbbreviation": "Cond",
+            "X": 447.0125714285715,
+            "Y": 775.6982857142859
+        },
+        {
+            "pointName": "Basion",
+            "pointAbbreviation": "Ba",
+            "X": 397.70971428571437,
+            "Y": 871.0171428571431
+        },
+        {
+            "pointName": "articulare",
+            "pointAbbreviation": "ar",
+            "X": 430.5782857142858,
+            "Y": 844.722285714286
+        },
+        {
+            "pointName": "Gonion",
+            "pointAbbreviation": "Go",
+            "X": 491.3851428571429,
+            "Y": 1028.786285714286
+        },
+        {
+            "pointName": "Posterior point of Condyle",
+            "pointAbbreviation": "ppCond",
+            "X": 422.36114285714297,
+            "Y": 797.0628571428574
+        },
+        {
+            "pointName": "Antegonial notch",
+            "pointAbbreviation": "Im",
+            "X": 599.8514285714286,
+            "Y": 1066.5851428571432
+        },
+        {
+            "pointName": "Pterygomaxillare",
+            "pointAbbreviation": "Ptm",
+            "X": 596.5645714285715,
+            "Y": 848.009142857143
+        },
+        {
+            "pointName": "Pterygo-maxillary fissure",
+            "pointAbbreviation": "Pt",
+            "X": 585.0605714285715,
+            "Y": 759.2640000000002
+        },
+        {
+            "pointName": "Pogonion",
+            "pointAbbreviation": "Pog",
+            "X": 798.7062857142859,
+            "Y": 1114.2445714285718
+        },
+        {
+            "pointName": "Gnathion",
+            "pointAbbreviation": "Gn",
+            "X": 780.6285714285715,
+            "Y": 1135.609142857143
+        },
+        {
+            "pointName": "Menton",
+            "pointAbbreviation": "Me",
+            "X": 754.3337142857146,
+            "Y": 1143.8262857142859
+        },
+        {
+            "pointName": "Center of symphysis",
+            "pointAbbreviation": "D",
+            "X": 765.8377142857144,
+            "Y": 1099.4537142857146
+        },
+        {
+            "pointName": "Anterior nasal spine",
+            "pointAbbreviation": "ANS",
+            "X": 859.513142857143,
+            "Y": 861.1565714285716
+        },
+        {
+            "pointName": "Posterior nasal spine",
+            "pointAbbreviation": "PNS",
+            "X": 575.2,
+            "Y": 880.8777142857144
+        },
+        {
+            "pointName": "A point",
+            "pointAbbreviation": "A",
+            "X": 846.3657142857144,
+            "Y": 884.1645714285717
+        },
+        {
+            "pointName": "B point",
+            "pointAbbreviation": "B",
+            "X": 805.2800000000001,
+            "Y": 1048.5074285714288
+        },
+        {
+            "pointName": "Infradentale",
+            "pointAbbreviation": "Id",
+            "X": 823.3577142857143,
+            "Y": 1012.3520000000003
+        },
+        {
+            "pointName": "Incision inferior",
+            "pointAbbreviation": "Is1l",
+            "X": 843.0788571428574,
+            "Y": 971.2662857142859
+        },
+        {
+            "pointName": "Labial outline of lower incisor",
+            "pointAbbreviation": "Li1l",
+            "X": 839.7920000000001,
+            "Y": 997.5611428571432
+        },
+        {
+            "pointName": "Apex of lower incisor",
+            "pointAbbreviation": "Ap1l",
+            "X": 787.2022857142858,
+            "Y": 1040.290285714286
+        },
+        {
+            "pointName": "Prosthion",
+            "pointAbbreviation": "Pr",
+            "X": 862.8000000000001,
+            "Y": 940.0411428571432
+        },
+        {
+            "pointName": "Apex of upper incisor",
+            "pointAbbreviation": "Ap1u",
+            "X": 818.4274285714288,
+            "Y": 874.3040000000001
+        },
+        {
+            "pointName": "Labial outline of upper incisor",
+            "pointAbbreviation": "Ls1u",
+            "X": 872.6605714285715,
+            "Y": 963.049142857143
+        },
+        {
+            "pointName": "Incision superior",
+            "pointAbbreviation": "Is1u",
+            "X": 871.017142857143,
+            "Y": 992.6308571428573
+        },
+        {
+            "pointName": "Posterior point of occlusal plane",
+            "pointAbbreviation": "ppOcP",
+            "X": 650.7977142857144,
+            "Y": 954.8320000000002
+        },
+        {
+            "pointName": "Mesial point of upper molar",
+            "pointAbbreviation": "Mu6",
+            "X": 703.3874285714287,
+            "Y": 956.4754285714289
+        },
+        {
+            "pointName": "Distal point of upper molar",
+            "pointAbbreviation": "Du6",
+            "X": 657.3714285714287,
+            "Y": 946.6148571428572
+        },
+        {
+            "pointName": "Mesial apex of upper molar",
+            "pointAbbreviation": "Mau6",
+            "X": 713.2480000000002,
+            "Y": 871.0171428571431
+        },
+        {
+            "pointName": "Mesial point of lower molar",
+            "pointAbbreviation": "Ml6",
+            "X": 703.3874285714287,
+            "Y": 969.6228571428575
+        },
+        {
+            "pointName": "Distal point of lower molar",
+            "pointAbbreviation": "Dl6",
+            "X": 650.7977142857144,
+            "Y": 964.6925714285717
+        },
+        {
+            "pointName": "Mesial apex of lower molar",
+            "pointAbbreviation": "Mal6",
+            "X": 670.5188571428573,
+            "Y": 1050.1508571428574
+        },
+        {
+            "pointName": "Tangent 1 (most posterior point on a tangent through articulare and ramus inferior to it)",
+            "pointAbbreviation": "T1",
+            "X": 445.3691428571429,
+            "Y": 895.6685714285717
+        },
+        {
+            "pointName": "Tangent 2 (most inferior on a tangent through menten and lower border)",
+            "pointAbbreviation": "T2",
+            "X": 672.1622857142859,
+            "Y": 1104.3840000000005
+        },
+        {
+            "pointName": "Soft tissue glabella",
+            "pointAbbreviation": "Gl’",
+            "X": 849.6525714285716,
+            "Y": 593.2777142857144
+        },
+        {
+            "pointName": "Soft tissue Nasion",
+            "pointAbbreviation": "N’",
+            "X": 833.2182857142858,
+            "Y": 649.154285714286
+        },
+        {
+            "pointName": "Tip of the nose",
+            "pointAbbreviation": "Ns",
+            "X": 948.2582857142859,
+            "Y": 808.5668571428573
+        },
+        {
+            "pointName": "Collumella tangent point",
+            "pointAbbreviation": "CoTg",
+            "X": 928.537142857143,
+            "Y": 836.505142857143
+        },
+        {
+            "pointName": "subnasale",
+            "pointAbbreviation": "Sn",
+            "X": 897.3120000000001,
+            "Y": 862.8000000000003
+        },
+        {
+            "pointName": "Labrale superior",
+            "pointAbbreviation": "Ls",
+            "X": 925.2502857142858,
+            "Y": 917.0331428571432
+        },
+        {
+            "pointName": "Stomion superior",
+            "pointAbbreviation": "Stm-s",
+            "X": 900.5988571428574,
+            "Y": 951.545142857143
+        },
+        {
+            "pointName": "Stomion inferior",
+            "pointAbbreviation": "Stm-i",
+            "X": 900.5988571428574,
+            "Y": 961.4057142857147
+        },
+        {
+            "pointName": "Labrale inferior",
+            "pointAbbreviation": "Li",
+            "X": 910.4594285714288,
+            "Y": 999.2045714285717
+        },
+        {
+            "pointName": "Mentolabial fold",
+            "pointAbbreviation": "Sm",
+            "X": 861.1565714285716,
+            "Y": 1033.7165714285716
+        },
+        {
+            "pointName": "Soft tissue Pogonion",
+            "pointAbbreviation": "Pog’",
+            "X": 843.0788571428574,
+            "Y": 1107.6708571428574
+        },
+        {
+            "pointName": "Soft tissue Gnathion",
+            "pointAbbreviation": "Gn’",
+            "X": 823.3577142857143,
+            "Y": 1147.1131428571432
+        },
+        {
+            "pointName": "Soft tissue Menton",
+            "pointAbbreviation": "Me’",
+            "X": 777.3417142857145,
+            "Y": 1173.4080000000004
+        }
+    ]
+},
+{
+    "imagePath": "cephalo (505).jpg",
+    "gender": "Male",
+    "age": 17,
+    "points": [
+        {
+            "pointName": "Ruler 1",
+            "pointAbbreviation": "R1",
+            "X": 900.5988571428574,
+            "Y": 292.5302857142858
+        },
+        {
+            "pointName": "Ruler 2",
+            "pointAbbreviation": "R2",
+            "X": 900.5988571428574,
+            "Y": 343.4765714285715
+        },
+        {
+            "pointName": "Sella turcica",
+            "pointAbbreviation": "S",
+            "X": 483.16800000000006,
+            "Y": 632.7200000000003
+        },
+        {
+            "pointName": " Nasion",
+            "pointAbbreviation": "N",
+            "X": 780.6285714285715,
+            "Y": 570.2697142857145
+        },
+        {
+            "pointName": "Orbital",
+            "pointAbbreviation": "Or",
+            "X": 731.3257142857143,
+            "Y": 728.0388571428574
+        },
+        {
+            "pointName": " Porion",
+            "pointAbbreviation": "P",
+            "X": 343.4765714285715,
+            "Y": 718.178285714286
+        },
+        {
+            "pointName": "Condylion",
+            "pointAbbreviation": "Cond",
+            "X": 417.43085714285723,
+            "Y": 708.3177142857144
+        },
+        {
+            "pointName": "Basion",
+            "pointAbbreviation": "Ba",
+            "X": 331.9725714285715,
+            "Y": 797.0628571428574
+        },
+        {
+            "pointName": "articulare",
+            "pointAbbreviation": "ar",
+            "X": 397.70971428571437,
+            "Y": 759.2640000000002
+        },
+        {
+            "pointName": "Gonion",
+            "pointAbbreviation": "Go",
+            "X": 463.44685714285725,
+            "Y": 967.9794285714288
+        },
+        {
+            "pointName": "Posterior point of Condyle",
+            "pointAbbreviation": "ppCond",
+            "X": 387.8491428571429,
+            "Y": 731.3257142857146
+        },
+        {
+            "pointName": "Antegonial notch",
+            "pointAbbreviation": "Im",
+            "X": 547.2617142857144,
+            "Y": 1007.4217142857145
+        },
+        {
+            "pointName": "Pterygomaxillare",
+            "pointAbbreviation": "Ptm",
+            "X": 557.1222857142858,
+            "Y": 785.5588571428573
+        },
+        {
+            "pointName": "Pterygo-maxillary fissure",
+            "pointAbbreviation": "Pt",
+            "X": 563.6960000000001,
+            "Y": 698.4571428571431
+        },
+        {
+            "pointName": "Pogonion",
+            "pointAbbreviation": "Pog",
+            "X": 769.1245714285716,
+            "Y": 1109.314285714286
+        },
+        {
+            "pointName": "Gnathion",
+            "pointAbbreviation": "Gn",
+            "X": 760.9074285714287,
+            "Y": 1125.7485714285717
+        },
+        {
+            "pointName": "Menton",
+            "pointAbbreviation": "Me",
+            "X": 742.8297142857144,
+            "Y": 1137.2525714285719
+        },
+        {
+            "pointName": "Center of symphysis",
+            "pointAbbreviation": "D",
+            "X": 749.4034285714287,
+            "Y": 1089.5931428571432
+        },
+        {
+            "pointName": "Anterior nasal spine",
+            "pointAbbreviation": "ANS",
+            "X": 820.0708571428572,
+            "Y": 828.2880000000002
+        },
+        {
+            "pointName": "Posterior nasal spine",
+            "pointAbbreviation": "PNS",
+            "X": 534.1142857142858,
+            "Y": 831.5748571428574
+        },
+        {
+            "pointName": "A point",
+            "pointAbbreviation": "A",
+            "X": 790.489142857143,
+            "Y": 848.009142857143
+        },
+        {
+            "pointName": "B point",
+            "pointAbbreviation": "B",
+            "X": 777.3417142857145,
+            "Y": 1055.0811428571433
+        },
+        {
+            "pointName": "Infradentale",
+            "pointAbbreviation": "Id",
+            "X": 803.6365714285716,
+            "Y": 1013.995428571429
+        },
+        {
+            "pointName": "Incision inferior",
+            "pointAbbreviation": "Is1l",
+            "X": 816.7840000000002,
+            "Y": 971.2662857142859
+        },
+        {
+            "pointName": "Labial outline of lower incisor",
+            "pointAbbreviation": "Li1l",
+            "X": 808.5668571428573,
+            "Y": 987.7005714285716
+        },
+        {
+            "pointName": "Apex of lower incisor",
+            "pointAbbreviation": "Ap1l",
+            "X": 760.9074285714287,
+            "Y": 1045.2205714285717
+        },
+        {
+            "pointName": "Prosthion",
+            "pointAbbreviation": "Pr",
+            "X": 810.2102857142859,
+            "Y": 908.8160000000001
+        },
+        {
+            "pointName": "Apex of upper incisor",
+            "pointAbbreviation": "Ap1u",
+            "X": 746.1165714285717,
+            "Y": 852.9394285714288
+        },
+        {
+            "pointName": "Labial outline of upper incisor",
+            "pointAbbreviation": "Ls1u",
+            "X": 831.5748571428572,
+            "Y": 930.1805714285716
+        },
+        {
+            "pointName": "Incision superior",
+            "pointAbbreviation": "Is1u",
+            "X": 831.5748571428572,
+            "Y": 949.9017142857144
+        },
+        {
+            "pointName": "Posterior point of occlusal plane",
+            "pointAbbreviation": "ppOcP",
+            "X": 655.7280000000002,
+            "Y": 941.6845714285716
+        },
+        {
+            "pointName": "Mesial point of upper molar",
+            "pointAbbreviation": "Mu6",
+            "X": 688.5965714285717,
+            "Y": 926.8937142857144
+        },
+        {
+            "pointName": "Distal point of upper molar",
+            "pointAbbreviation": "Du6",
+            "X": 637.6502857142858,
+            "Y": 920.3200000000004
+        },
+        {
+            "pointName": "Mesial apex of upper molar",
+            "pointAbbreviation": "Mau6",
+            "X": 695.1702857142858,
+            "Y": 846.3657142857145
+        },
+        {
+            "pointName": "Mesial point of lower molar",
+            "pointAbbreviation": "Ml6",
+            "X": 705.0308571428573,
+            "Y": 954.8320000000002
+        },
+        {
+            "pointName": "Distal point of lower molar",
+            "pointAbbreviation": "Dl6",
+            "X": 668.8754285714286,
+            "Y": 946.6148571428572
+        },
+        {
+            "pointName": "Mesial apex of lower molar",
+            "pointAbbreviation": "Mal6",
+            "X": 675.449142857143,
+            "Y": 1043.5771428571431
+        },
+        {
+            "pointName": "Tangent 1 (most posterior point on a tangent through articulare and ramus inferior to it)",
+            "pointAbbreviation": "T1",
+            "X": 415.7874285714286,
+            "Y": 836.505142857143
+        },
+        {
+            "pointName": "Tangent 2 (most inferior on a tangent through menten and lower border)",
+            "pointAbbreviation": "T2",
+            "X": 649.1542857142858,
+            "Y": 1064.9417142857146
+        },
+        {
+            "pointName": "Soft tissue glabella",
+            "pointAbbreviation": "Gl’",
+            "X": 818.4274285714288,
+            "Y": 524.2537142857145
+        },
+        {
+            "pointName": "Soft tissue Nasion",
+            "pointAbbreviation": "N’",
+            "X": 808.5668571428573,
+            "Y": 588.3474285714287
+        },
+        {
+            "pointName": "Tip of the nose",
+            "pointAbbreviation": "Ns",
+            "X": 944.9714285714288,
+            "Y": 790.4891428571431
+        },
+        {
+            "pointName": "Collumella tangent point",
+            "pointAbbreviation": "CoTg",
+            "X": 913.7462857142859,
+            "Y": 825.001142857143
+        },
+        {
+            "pointName": "subnasale",
+            "pointAbbreviation": "Sn",
+            "X": 879.2342857142859,
+            "Y": 836.505142857143
+        },
+        {
+            "pointName": "Labrale superior",
+            "pointAbbreviation": "Ls",
+            "X": 894.025142857143,
+            "Y": 907.1725714285716
+        },
+        {
+            "pointName": "Stomion superior",
+            "pointAbbreviation": "Stm-s",
+            "X": 854.5828571428573,
+            "Y": 938.3977142857144
+        },
+        {
+            "pointName": "Stomion inferior",
+            "pointAbbreviation": "Stm-i",
+            "X": 851.2960000000003,
+            "Y": 953.1885714285717
+        },
+        {
+            "pointName": "Labrale inferior",
+            "pointAbbreviation": "Li",
+            "X": 880.8777142857144,
+            "Y": 1000.8480000000001
+        },
+        {
+            "pointName": "Mentolabial fold",
+            "pointAbbreviation": "Sm",
+            "X": 844.7222857142859,
+            "Y": 1032.073142857143
+        },
+        {
+            "pointName": "Soft tissue Pogonion",
+            "pointAbbreviation": "Pog’",
+            "X": 831.5748571428572,
+            "Y": 1106.0274285714288
+        },
+        {
+            "pointName": "Soft tissue Gnathion",
+            "pointAbbreviation": "Gn’",
+            "X": 811.8537142857145,
+            "Y": 1148.7565714285718
+        },
+        {
+            "pointName": "Soft tissue Menton",
+            "pointAbbreviation": "Me’",
+            "X": 755.977142857143,
+            "Y": 1173.4080000000004
+        }
+    ]
+}]

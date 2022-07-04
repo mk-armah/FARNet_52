@@ -20,8 +20,8 @@ def get_markposion_fromtxt(point_num, path):
 
 
 def get_prepoint_from_htmp(heatmaps, scal_ratio_w, scal_ratio_h):
-    pred = np.zeros((19, 2))
-    for i in range(19):
+    pred = np.zeros((52, 2)) #was (19,2)
+    for i in range(52): #was (19)
         heatmap = heatmaps[i]
         pre_y, pre_x = np.where(heatmap == np.max(heatmap))
         pred[i][1] = pre_y[0] * scal_ratio_h

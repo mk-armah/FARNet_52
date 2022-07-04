@@ -34,11 +34,11 @@ class Farnet(nn.Module):
         super(Farnet, self).__init__()
         self.features = models.densenet121(pretrained=True).features
 
-        self.upsample2 = nn.Upsample(scale_factor=2, mode='bilinear')
-        self.upsample4 = nn.Upsample(scale_factor=4, mode='bilinear')
-        self.upsample8 = nn.Upsample(scale_factor=8, mode='bilinear')
-        self.upsample16 = nn.Upsample(scale_factor=16, mode='bilinear')
-        self.upsample32 = nn.Upsample(scale_factor=32, mode='bilinear')
+        self.upsample2 = nn.Upsample(scale_factor=2, mode='bilinear',align_corners = True)
+        self.upsample4 = nn.Upsample(scale_factor=4, mode='bilinear',align_corners = True)
+        self.upsample8 = nn.Upsample(scale_factor=8, mode='bilinear',align_corners=True)
+        self.upsample16 = nn.Upsample(scale_factor=16, mode='bilinear',align_corners = True)
+        self.upsample32 = nn.Upsample(scale_factor=32, mode='bilinear',align_corners = True)
 
         self.wblock1 = wblock(1, 512, 512, 256)
         self.wblock2 = wblock(1, 1024, 1024, 256)
@@ -119,10 +119,10 @@ class Farnet(nn.Module):
         ]))
         self.conv_33_refine1 = nn.Conv2d(64, 64, kernel_size=3, stride=1, padding=1)
         self.conv_33_refine2 = nn.Conv2d(64, 64, kernel_size=3, stride=1, padding=1)
-        self.conv_11_refine = nn.Conv2d(64, 19, kernel_size=1)
-        self.conv_33_last1 = nn.Conv2d(115, 115, kernel_size=3, stride=1, padding=1)
-        self.conv_33_last2 = nn.Conv2d(115, 115, kernel_size=3, stride=1, padding=1)
-        self.conv_11_last = nn.Conv2d(115, 19, kernel_size=1)
+        self.conv_11_refine = nn.Conv2d(64, 52, kernel_size=1) #changed from 19 to 52 
+        self.conv_33_last1 = nn.Conv2d(148, 148, kernel_size=3, stride=1, padding=1) #changed from 115 to 148
+        self.conv_33_last2 = nn.Conv2d(148, 148, kernel_size=3, stride=1, padding=1) #changed from 115 to 148
+        self.conv_11_last = nn.Conv2d(148, 52, kernel_size=1) #changed from 19 to 52
 
     def forward(self, x):
         w1_f0 = self.w1_conv11_0(x)
@@ -183,12 +183,15 @@ class Farnet(nn.Module):
 
         refine_hp = self.conv_33_refine1(x)
         refine_hp = self.conv_11_refine(refine_hp)
-
+        
         x = self.upsample2(x)
         refine1_up = self.upsample2(refine_hp)
+        
         x = torch.cat((x, w1_f0, refine1_up), 1)
-
+        
         # output
         hp = self.conv_33_last1(x)
+        
         hp = self.conv_11_last(hp)
+
         return hp, refine_hp

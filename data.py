@@ -1,47 +1,81 @@
-import os
 
-import cv2
 import numpy as np
+import os
 import torch
-from torch.utils.data import Dataset
-from torchvision import transforms
+import torchvision
+import torch.nn as nn
+import pandas as pd
+import matplotlib.pyplot as plt
+import cv2
+import json
 
-from utils import get_markposion_fromtxt
+from config import Config 
 
 
-class medical_dataset(Dataset):
-    def __init__(self, img_dir, gt_dir, resize_height, resize_width, point_num, sigma, transform=None):
-        self.img_dir = img_dir
-        self.gt_dir = gt_dir
+class medical_dataset(torch.utils.data.Dataset):
+    def __init__(self,imagePath,jsonfile_path,resize_height, resize_width, point_num, sigma, transform=None):
+        """Pytorch Data set class to map ground truth image to ground truth label and enabling indexing and slicing
+        To be used with dataloader
+        
+        Args:
+            imagePath: file directory where the image data is stored
+            jsonfile_path: file directory where the single json file is stored. Note however that the single jsonfile
+            must contain all information for the images in the imagePath
+            resize_height: desired height of images
+            resize_width : desired width of images
+            pint_num : number of points to localize
+            sigma: a hyperparameter to control the spread of the peak, see original paper for more details 
+        Return:
+            image : the original input image
+            heatmaps : predicted heatmaps
+            heatmaps_refine :predicted refine heatmaps
+            img_name:input image name 
+            x_all: heatmap x-axis points 
+            y_all:  heatmap y-axis points"""
+
+
         self.resize_height = resize_height
         self.resize_width = resize_width
-        self.img_names = os.listdir(img_dir)
-        self.img_nums = len(self.img_names)
         self.point_num = point_num
         self.sigma = sigma
         self.heatmap_height = int(self.resize_height)
         self.heatmap_width = int(self.resize_width)
-
-    def __getitem__(self, i):
-        index = i % self.img_nums
-        img_name = self.img_names[index]
-        img_path = os.path.join(self.img_dir, img_name)
-        img, scal_ratio_w, scal_ratio_h = self.img_preproccess(img_path)
-        # img = normalize_robust(img)
-        gt_path = self.gt_dir + '/' + img_name.split('.')[0] + '.txt'
-        gt_x, gt_y = get_markposion_fromtxt(self.point_num, gt_path)
-        x_all = gt_x / scal_ratio_w
-        y_all = gt_y / scal_ratio_h
-        heatmaps = self.get_heatmaps(x_all, y_all, self.sigma)
-        heatmaps_refine = self.get_refine_heatmaps(x_all / 2, y_all / 2, self.sigma)
-        # img = self.data_preproccess(img)
-        heatmaps = self.data_preproccess(heatmaps)
-        heatmaps_refine = self.data_preproccess(heatmaps_refine)
-        return img, heatmaps, heatmaps_refine, img_name, x_all, y_all
+        self.imagePath = imagePath
+        self.images = os.listdir(self.imagePath) #list the image directories
+        self.img_nums = len(self.images)
+        self.jsonfile_path = jsonfile_path 
+        self.transform = transform
+        
+        with open(self.jsonfile_path,"r") as f:
+            self.loaded_json = json.load(f)
 
     def __len__(self):
-        return self.img_nums
+        return len(self.images)
+        
+    def __getitem__(self,idx):
+        index = idx % self.img_nums
+        img_name = self.images[index]
+        
+        image = os.path.join(self.imagePath,self.loaded_json[idx]['imagePath']) #get the same image index from the image directory using the imagePath info from the json file
+        
+        image,scal_ratio_w, scal_ratio_h = self.img_preproccess(img_path = image)
+        
+        x_all = []
+        y_all = []
 
+        for i in self.loaded_json[idx]["points"]: 
+            x_all.append(i["X"]),y_all.append(i["Y"])
+            
+        x_all = np.array(x_all)/scal_ratio_w
+        y_all = np.array(y_all)/scal_ratio_h
+      
+        heatmaps = self.get_heatmaps(x_all, y_all, self.sigma)
+        heatmaps_refine = self.get_refine_heatmaps(x_all / 2, y_all / 2, self.sigma)
+        heatmaps = self.data_preproccess(heatmaps)
+        heatmaps_refine = self.data_preproccess(heatmaps_refine)
+        
+        return image, heatmaps, heatmaps_refine, img_name, x_all, y_all
+    
     def get_heatmaps(self, x_all, y_all, sigma):
         heatmaps = np.zeros((self.point_num, self.heatmap_height, self.heatmap_width))
         for i in range(self.point_num):
@@ -66,12 +100,10 @@ class medical_dataset(Dataset):
         scal_ratio_h = img_h / self.resize_height
 
         img = torch.from_numpy(img).float()
-        # img = img / 255
 
-        # img transform
-        transform1 = transforms.Compose([
+        transform1 = torchvision.transforms.Compose([
             # transforms.Normalize([121.78, 121.78, 121.78], [74.36, 74.36, 74.36])
-            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+            torchvision.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]
         )
         img = transform1(img)

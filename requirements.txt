@@ -1,0 +1,6 @@
+# Dependencies
+
+* pytorch = 1.0.1
+* numpy = 1.18.5
+* python >= 3.6
+* xlwt
